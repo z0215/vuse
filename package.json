@@ -45,6 +45,9 @@
   "lint-staged": {
     "*": [
       "eslint"
+    ],
+    "*.{ts,vue}": [
+      "vue-tsc --noEmit"
     ]
   }
 }
