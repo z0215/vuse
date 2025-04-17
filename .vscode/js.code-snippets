@@ -1,0 +1,16 @@
+{
+  "import": {
+    "scope": "typescript,typescriptreact,vue",
+    "prefix": "im",
+    "body": [
+      "import { $2 } from '$1'"
+    ],
+  },
+  "export-all": {
+    "scope": "typescript,typescriptreact,vue",
+    "prefix": "ex",
+    "body": [
+      "export * from '$1'"
+    ],
+  },
+}
