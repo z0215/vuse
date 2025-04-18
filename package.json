@@ -14,7 +14,6 @@
     "check:dep": "npx taze major",
     "check:commit": "tsx ./commitlint.ts",
     "visualizer": "npx vite-bundle-visualizer",
-    "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
@@ -47,7 +46,7 @@
       "eslint"
     ],
     "*.{ts,vue}": [
-      "vue-tsc --noEmit"
+      "bash -c vue-tsc --noEmit"
     ]
   }
 }
