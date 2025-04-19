@@ -12,7 +12,9 @@
       "~/*": ["src/*"]
     },
     "types": [
-      "vite/client"
+      "vite/client",
+      "unplugin-vue-router/client",
+      "vite-plugin-vue-layouts/client"
     ],
     "strict": true,
     "noFallthroughCasesInSwitch": true,

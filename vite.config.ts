@@ -2,7 +2,10 @@ import { fileURLToPath, URL } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import unoCSS from 'unocss/vite'
 import autoImport from 'unplugin-auto-import/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
+import router from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
+import layouts from 'vite-plugin-vue-layouts'
 
 export default defineConfig({
   resolve: {
@@ -14,10 +17,15 @@ export default defineConfig({
     port: 9527,
   },
   plugins: [
+    router({
+      dts: 'src/auto.router.d.ts',
+    }),
+    layouts(),
     vue(),
     autoImport({
-      dts: './src/auto.d.ts',
+      dts: './src/auto.core.d.ts',
       imports: [
+        VueRouterAutoImports,
         {
           vue: [
             // Reactivity: Core
