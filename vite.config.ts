@@ -108,6 +108,7 @@ export default defineConfig({
         },
       ],
       dirs: ['./src/auto-imports'],
+      vueTemplate: true,
     }),
     unoCSS(),
   ],

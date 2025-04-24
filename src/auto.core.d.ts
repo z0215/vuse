@@ -65,3 +65,63 @@ declare global {
   export type { Component, MaybeRef, MaybeRefOrGetter, ComputedRef, Ref, HTMLAttributes, CSSProperties } from 'vue'
   import('vue')
 }
+
+// for vue template auto import
+import { UnwrapRef } from 'vue'
+declare module 'vue' {
+  interface GlobalComponents {}
+  interface ComponentCustomProperties {
+    readonly cn: UnwrapRef<typeof import('./auto-imports/cn')['cn']>
+    readonly computed: UnwrapRef<typeof import('vue')['computed']>
+    readonly customRef: UnwrapRef<typeof import('vue')['customRef']>
+    readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
+    readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly hasInjectionContext: UnwrapRef<typeof import('vue')['hasInjectionContext']>
+    readonly inject: UnwrapRef<typeof import('vue')['inject']>
+    readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
+    readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
+    readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
+    readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
+    readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
+    readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>
+    readonly onBeforeRouteLeave: UnwrapRef<typeof import('vue-router')['onBeforeRouteLeave']>
+    readonly onBeforeRouteUpdate: UnwrapRef<typeof import('vue-router')['onBeforeRouteUpdate']>
+    readonly onBeforeUnmount: UnwrapRef<typeof import('vue')['onBeforeUnmount']>
+    readonly onBeforeUpdate: UnwrapRef<typeof import('vue')['onBeforeUpdate']>
+    readonly onDeactivated: UnwrapRef<typeof import('vue')['onDeactivated']>
+    readonly onErrorCaptured: UnwrapRef<typeof import('vue')['onErrorCaptured']>
+    readonly onMounted: UnwrapRef<typeof import('vue')['onMounted']>
+    readonly onRenderTracked: UnwrapRef<typeof import('vue')['onRenderTracked']>
+    readonly onRenderTriggered: UnwrapRef<typeof import('vue')['onRenderTriggered']>
+    readonly onScopeDispose: UnwrapRef<typeof import('vue')['onScopeDispose']>
+    readonly onServerPrefetch: UnwrapRef<typeof import('vue')['onServerPrefetch']>
+    readonly onUnmounted: UnwrapRef<typeof import('vue')['onUnmounted']>
+    readonly onUpdated: UnwrapRef<typeof import('vue')['onUpdated']>
+    readonly onWatcherCleanup: UnwrapRef<typeof import('vue')['onWatcherCleanup']>
+    readonly provide: UnwrapRef<typeof import('vue')['provide']>
+    readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
+    readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
+    readonly ref: UnwrapRef<typeof import('vue')['ref']>
+    readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
+    readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
+    readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
+    readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
+    readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
+    readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>
+    readonly toValue: UnwrapRef<typeof import('vue')['toValue']>
+    readonly triggerRef: UnwrapRef<typeof import('vue')['triggerRef']>
+    readonly unref: UnwrapRef<typeof import('vue')['unref']>
+    readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
+    readonly useId: UnwrapRef<typeof import('vue')['useId']>
+    readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
+    readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
+    readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
+    readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
+    readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>
+    readonly watch: UnwrapRef<typeof import('vue')['watch']>
+    readonly watchEffect: UnwrapRef<typeof import('vue')['watchEffect']>
+    readonly watchPostEffect: UnwrapRef<typeof import('vue')['watchPostEffect']>
+    readonly watchSyncEffect: UnwrapRef<typeof import('vue')['watchSyncEffect']>
+  }
+}
